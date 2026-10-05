@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -50,7 +51,7 @@ public class ReporteService {
     public byte[] ventasPdf(List<FilaVenta> f, LocalDate desde, LocalDate hasta) {
         BigDecimal total = f.stream().map(FilaVenta::subtotal).reduce(BigDecimal.ZERO, BigDecimal::add);
         return ExportUtil.pdf("Reporte de ventas del " + desde + " al " + hasta, ENC_VENTAS, filasVenta(f),
-                "TOTAL VENDIDO: S/ " + total.setScale(2));
+                "TOTAL VENDIDO: S/ " + total.setScale(2, RoundingMode.HALF_UP));
     }
 
     public byte[] ventasXlsx(List<FilaVenta> f) { return ExportUtil.xlsx("Ventas", ENC_VENTAS, filasVenta(f)); }
@@ -100,6 +101,6 @@ public class ReporteService {
                 String.valueOf(d.cantidad()), d.precioUnitario().toPlainString(), d.subtotal().toPlainString())).toList();
         return ExportUtil.pdf("Comprobante de venta N° " + v.id() + " – " + v.fecha().format(FMT) + " – Vendedor: " + v.vendedor(),
                 List.of("Código", "Producto", "Cantidad", "P. unitario", "Subtotal"), filas,
-                "TOTAL: S/ " + v.total().setScale(2));
+                "TOTAL: S/ " + v.total().setScale(2, RoundingMode.HALF_UP));
     }
 }
