@@ -1,0 +1,6 @@
+body { background: #f4f6f9; }
+.navbar-brand small { font-weight: 400; opacity: .75; }
+.card-title-bar { font-weight: 600; }
+.table-sm td, .table-sm th { vertical-align: middle; }
+.login-box { max-width: 380px; margin: 12vh auto; }
+.fila-alerta { --bs-table-bg: #f8d7da; }
