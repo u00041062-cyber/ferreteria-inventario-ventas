@@ -1,0 +1,21 @@
+# Java / Maven
+target/
+*.class
+*.log
+# Node / React
+node_modules/
+dist/
+build/
+# IDEs
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+# Configuración local con claves
+application-local.properties
+.env
+# Sistema
+.DS_Store
+Thumbs.db
