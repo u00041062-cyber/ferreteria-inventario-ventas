@@ -15,7 +15,7 @@ Aplicación web de 3 capas: **React** (presentación) → **Spring Boot** (API R
 | `06_Recursos` | Manual de usuario y guía de instalación |
 
 ## Flujo de ramas
-`main` (estable) ← `develop` ← `feature/<historia>`; cambios por Pull Request con revisión de otro integrante.
+`principal` (estable) ← `develop` ← `feature/<historia>`; cambios por Pull Request con revisión de otro integrante.
 Al cierre de cada sprint se crea una etiqueta (`v1.0`, `v2.0`, `v3.0`).
 
 Ver `06_Recursos/Guia_Instalacion.md` para ejecutar el proyecto.
