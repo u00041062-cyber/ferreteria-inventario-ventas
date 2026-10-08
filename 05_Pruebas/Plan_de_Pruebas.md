@@ -44,7 +44,7 @@ Las 12 pruebas planificadas (CP01–CP12) y las 2 adicionales quedaron aprobadas
 
 El proyecto compila con Java 17 (`pom.xml`); la ejecución se hizo con JDK 21, compatible con esa versión.
 
-## Prueba manual en el navegador (evidencia para el informe)
+## Prueba manual en el navegador
 1. Ingresar como `admin` → ver menú completo. Ingresar como `vendedor1` → solo Stock y Ventas.
 2. Registrar un producto, una entrada de mercadería y una venta; verificar el descuento de stock en Stock.
 3. Generar el reporte de ventas del día y exportar PDF y Excel.
