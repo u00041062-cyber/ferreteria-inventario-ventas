@@ -43,7 +43,6 @@ La API queda en `http://localhost:8080`. En el primer inicio reemplaza los marca
 | `admin` | `Admin123` | Administrador |
 | `vendedor1` | `Vendedor123` | Vendedor |
 
-**Cambie estas contraseñas** (variables `SEED_ADMIN_PASSWORD` y `SEED_VENDEDOR_PASSWORD` antes del primer inicio, o desde la pantalla Usuarios).
 
 ## 5. Frontend (React)
 ```bash
