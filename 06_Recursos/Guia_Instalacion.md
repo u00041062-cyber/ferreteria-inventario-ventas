@@ -7,7 +7,7 @@ Arquitectura: **React** (puerto 5173) → **Spring Boot** (puerto 8080) → **SQ
 | Programa | Versión | Uso |
 |---|---|---|
 | SQL Server Express + SSMS | 2019 o superior | Base de datos |
-| JDK | 17 o superior | Ejecutar la API |
+| JDK | 17 o superior (probado con JDK 21) | Ejecutar la API |
 | Maven | 3.9 o superior | Compilar la API |
 | Node.js | 20 o superior (incluye npm) | Ejecutar el frontend |
 | Git | cualquiera | Clonar el repositorio |
@@ -60,6 +60,10 @@ mvn test
 ```
 Las pruebas usan una base H2 en memoria; no tocan SQL Server.
 
+Resultado esperado: al final de la consola debe aparecer `Tests run: 14, Failures: 0, Errors: 0, Skipped: 0` y `BUILD SUCCESS`. En la ejecución del 08/10/2026 (Java 21.0.10) la primera corrida tardó 1 min 40 s: `RendimientoTest` (1 prueba, incluye el arranque de Spring) y `SistemaIntegracionTest` (13 pruebas).
+
+Durante la ejecución aparecen avisos normales que no indican error: "Using generated security password" (contraseña temporal de Spring Security en el perfil de prueba) y "A Java agent has been loaded dynamically" (ByteBuddy, usado por las pruebas).
+
 ## 7. Problemas frecuentes
 | Síntoma | Causa y solución |
 |---|---|
@@ -68,3 +72,6 @@ Las pruebas usan una base H2 en memoria; no tocan SQL Server.
 | La pantalla dice "No se pudo conectar con el servidor" | La API no está en ejecución o `VITE_API_URL` es incorrecto. |
 | Error de CORS en el navegador | El frontend debe abrirse en `http://localhost:5173` (propiedad `app.cors.origins`). |
 | `Invalid or unsupported JWT secret` | `JWT_SECRET` debe tener 32 caracteres o más. |
+| Aviso "WARNING: A Java agent has been loaded dynamically" al ejecutar `mvn test` | Es normal (ByteBuddy). No afecta el resultado; si la compilación y las pruebas terminan en BUILD SUCCESS, puede ignorarse. |
+| Aviso "Using generated security password" | Es normal en el perfil de prueba; la API real usa los usuarios de la base de datos. |
+| `mvn test` tarda más de un minuto | El arranque de Spring y la prueba de 5 000 productos toman tiempo en la primera ejecución; es lo esperado. |
