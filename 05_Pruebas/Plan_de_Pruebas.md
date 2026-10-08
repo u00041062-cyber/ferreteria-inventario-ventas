@@ -25,7 +25,24 @@ mvn test
 | CP11 | Consulta de stock | Consultar el stock con un catálogo de prueba amplio (5 000 productos) | Respuesta en menos de 3 segundos | Rendimiento | `RendimientoTest.cp11_consultaStockCatalogoAmplio` | ✔ Aprobado: 415 ms (mvn test, 08/10/2026) |
 | CP12 | Flujo completo | Inicio de sesión, entrada de mercadería, venta y reporte | Datos consistentes entre todos los módulos | Integración | `cp12_flujoCompleto` | ✔ Aprobado (mvn test, 08/10/2026) |
 
-Pruebas adicionales: acceso sin token (401) y alerta de stock mínimo.
+Pruebas adicionales (también aprobadas): `sinTokenNoAccede` (acceso sin token, 401) y `alertaStockMinimo` (alerta de stock mínimo).
+
+## Resumen de la ejecución automática (mvn test)
+| Dato | Valor |
+|---|---|
+| Fecha de ejecución | 08/10/2026, 08:42 – 08:43 (hora de Lima) |
+| Comando | `mvn test` (carpeta `03_Codigo_Fuente/backend`) |
+| Entorno | Windows, Java 21.0.10, Spring Boot 3.3.5, Hibernate 6.5.3, Maven Surefire 3.2.5 (JUnit Platform) |
+| Base de datos de prueba | H2 en memoria (perfil "test"); no se usó SQL Server |
+| RendimientoTest | 1 prueba, 0 fallos, 0 errores (44,09 s) |
+| SistemaIntegracionTest | 13 pruebas, 0 fallos, 0 errores (18,15 s) |
+| Total | 14 pruebas: 0 fallos, 0 errores, 0 omitidas |
+| Resultado final | BUILD SUCCESS (tiempo total: 1 min 40 s) |
+| CP11 – rendimiento | Consulta sobre 5 000 productos en 415 ms (meta: menos de 3 000 ms) |
+
+Las 12 pruebas planificadas (CP01–CP12) y las 2 adicionales quedaron aprobadas. En el registro de consola aparecen avisos esperados que no afectan el resultado: la contraseña generada por Spring Security (solo para desarrollo) y la advertencia de carga dinámica del agente Java de ByteBuddy.
+
+El proyecto compila con Java 17 (`pom.xml`); la ejecución se hizo con JDK 21, compatible con esa versión.
 
 ## Prueba manual en el navegador (evidencia para el informe)
 1. Ingresar como `admin` → ver menú completo. Ingresar como `vendedor1` → solo Stock y Ventas.
@@ -42,8 +59,4 @@ Pruebas adicionales: acceso sin token (401) y alerta de stock mínimo.
 | 4 | Probar el acceso con un usuario de cada rol (CP01–CP03) | I = (Uaut/Utot)×100 | 100 % |
 | 5 | Verificar que ventas y movimientos queden en SQL Server | I = (Creg/Ctot)×100 | 100 % |
 
-> Las columnas "Resultado obtenido" y las mediciones se completan al ejecutar las pruebas; no se incluyen valores inventados.
-
-## Prueba de integración
-Verifica que React, la API REST y SQL Server funcionen de forma coordinada: el flujo CP12 ejecutado desde la interfaz
-(login → entrada → venta → reporte) debe dejar los mismos datos en la pantalla de Stock y en la tabla `MOVIMIENTO_INVENTARIO`.
+> La columna "Resultado obtenido" corresponde a la ejecución automática del 08/10/2026. Las mediciones de los objetivos 1 a 3 (cronometraje y conteo de errores) y la verificación del objetivo 5 en SQL Server se completan con la prueba manual; no se incluyen valores inventados. Para el objetivo 4, las pruebas CP01–CP03 aprobadas dan la evidencia automática del control de acceso por rol.
