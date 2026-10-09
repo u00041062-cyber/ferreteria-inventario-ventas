@@ -37,7 +37,7 @@ Según su rol verá más o menos opciones:
 - **Categorías:** al final de la pantalla puede agregar, editar o eliminar categorías (no se elimina una que tenga productos).
 
 ## 5. Entradas y salidas de almacén (administrador)
-1. En **Almacén** elija **Entrada** (llegó mercadería) o **Salida** (ajuste, merma).
+1. En **Almacén** elija **Entrada** (llegó mercadería) o **Salida** (ajuste, merma). Las ventas registran su salida automáticamente.
 2. Seleccione el producto, la cantidad y escriba el motivo; pulse **Registrar**.
 3. El stock se actualiza y el movimiento queda en el historial. Una salida mayor al stock se rechaza.
 
@@ -48,7 +48,7 @@ Según su rol verá más o menos opciones:
 4. Pulse **Exportar PDF** o **Exportar Excel** para descargar el archivo.
 
 ## 7. Usuarios y roles (administrador)
-- **Crear:** nombre, usuario, contraseña (mínimo 6 caracteres) y rol (Administrador o Vendedor).
+- **Crear:** nombre, usuario, contraseña (entre 6 y 60 caracteres) y rol (Administrador o Vendedor).
 - **Editar:** puede cambiar nombre, rol o dejar una nueva contraseña (si deja el campo vacío se mantiene la actual).
 - **Desactivar / Activar:** un usuario desactivado no puede ingresar. No puede desactivar su propia cuenta.
 

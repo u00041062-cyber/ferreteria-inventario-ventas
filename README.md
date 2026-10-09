@@ -11,7 +11,7 @@ Aplicación web de 3 capas: **React** (presentación) → **Spring Boot** (API R
 | `03_Codigo_Fuente/backend` | API REST (Java 17, Spring Boot, Maven) |
 | `03_Codigo_Fuente/frontend` | Aplicación React (Vite + Bootstrap) |
 | `04_Base_de_Datos` | Scripts SQL Server (estructura y datos de prueba) |
-| `05_Pruebas` | Plan de pruebas y evidencias |
+| `05_Pruebas` | Plan de pruebas y resultados de ejecución |
 | `06_Recursos` | Manual de usuario y guía de instalación |
 
 ## Flujo de ramas

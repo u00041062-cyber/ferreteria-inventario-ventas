@@ -22,7 +22,7 @@ cd ferreteria-inventario-ventas
 1. Abrir **SQL Server Configuration Manager** → *Protocolos de SQL Server Express* → habilitar **TCP/IP**; en sus propiedades, pestaña *Direcciones IP*, sección **IPAll**: *Puertos TCP* = `1433` y *Puertos dinámicos* en blanco. Reiniciar el servicio **SQL Server (SQLEXPRESS)**.
 2. En SSMS, clic derecho en el servidor → *Propiedades* → *Seguridad* → **Modo de autenticación de SQL Server y Windows**. Reiniciar el servicio.
 3. Habilitar el inicio de sesión `sa` y asignarle una contraseña (Seguridad → Inicios de sesión → sa → Propiedades).
-4. En SSMS abrir y ejecutar, en este orden, con **F5**:
+4. En SSMS abrir y ejecutar, en este orden, con **F5** (el script 01 elimina y vuelve a crear la base `FerreteriaLosOlivos` si ya existe; no lo ejecute sobre datos que desee conservar):
    1. `04_Base_de_Datos/01_crear_base_datos.sql`
    2. `04_Base_de_Datos/02_datos_prueba.sql`
 
@@ -36,7 +36,7 @@ $env:DB_USER="sa"; $env:DB_PASSWORD="TU_CLAVE_DE_SA"; $env:JWT_SECRET="una-clave
 
 mvn spring-boot:run
 ```
-La API queda en `http://localhost:8080`. En el primer inicio reemplaza los marcadores de contraseña de los usuarios de prueba por hashes BCrypt.
+La API queda en `http://localhost:8080`. En el primer inicio reemplaza los marcadores de contraseña de los usuarios de prueba por hashes BCrypt. Si no define DB_PASSWORD, JWT_SECRET, SEED_ADMIN_PASSWORD ni SEED_VENDEDOR_PASSWORD, la API usa los valores de desarrollo de application.properties (clave de sa de ejemplo y un secreto JWT de ejemplo): úselos solo en pruebas locales y defina los suyos en cualquier otro entorno.
 
 | Usuario | Contraseña inicial | Rol |
 |---|---|---|
@@ -59,7 +59,7 @@ mvn test
 ```
 Las pruebas usan una base H2 en memoria; no tocan SQL Server.
 
-Resultado esperado: al final de la consola debe aparecer `Tests run: 14, Failures: 0, Errors: 0, Skipped: 0` y `BUILD SUCCESS`. En la ejecución del 08/10/2026 (Java 21.0.10) la primera corrida tardó 1 min 40 s: `RendimientoTest` (1 prueba, incluye el arranque de Spring) y `SistemaIntegracionTest` (13 pruebas).
+Resultado esperado: al final de la consola debe aparecer `Tests run: 14, Failures: 0, Errors: 0, Skipped: 0` y `BUILD SUCCESS`. En las ejecuciones del 08/10/2026 (Java 21.0.10) el tiempo total fue de 1 min 40 s y de 2 min 39 s según la corrida: `RendimientoTest` (1 prueba, incluye el arranque de Spring) y `SistemaIntegracionTest` (13 pruebas).
 
 Durante la ejecución aparecen avisos normales que no indican error: "Using generated security password" (contraseña temporal de Spring Security en el perfil de prueba) y "A Java agent has been loaded dynamically" (ByteBuddy, usado por las pruebas).
 
@@ -70,7 +70,7 @@ Durante la ejecución aparecen avisos normales que no indican error: "Using gene
 | `Connection refused` a `localhost:1433` | TCP/IP no habilitado o servicio sin reiniciar. |
 | La pantalla dice "No se pudo conectar con el servidor" | La API no está en ejecución o `VITE_API_URL` es incorrecto. |
 | Error de CORS en el navegador | El frontend debe abrirse en `http://localhost:5173` (propiedad `app.cors.origins`). |
-| `Invalid or unsupported JWT secret` | `JWT_SECRET` debe tener 32 caracteres o más. |
+| Error `WeakKeyException` ("The specified key byte array is … bits which is not secure enough…") | `JWT_SECRET` debe tener 32 caracteres o más (si no se define, se usa el valor de desarrollo). |
 | Aviso "WARNING: A Java agent has been loaded dynamically" al ejecutar `mvn test` | Es normal (ByteBuddy). No afecta el resultado; si la compilación y las pruebas terminan en BUILD SUCCESS, puede ignorarse. |
 | Aviso "Using generated security password" | Es normal en el perfil de prueba; la API real usa los usuarios de la base de datos. |
 | `mvn test` tarda más de un minuto | El arranque de Spring y la prueba de 5 000 productos toman tiempo en la primera ejecución; es lo esperado. |
