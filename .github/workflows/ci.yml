@@ -1,0 +1,39 @@
+# Integración continua: compila y ejecuta las pruebas en cada push o Pull Request.
+name: CI
+
+on:
+  push:
+    branches: [ principal, develop, 'feature/**' ]
+  pull_request:
+    branches: [ principal, develop ]
+
+jobs:
+  backend:
+    name: Backend (Spring Boot + Maven)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Compilar y ejecutar pruebas
+        working-directory: 03_Codigo_Fuente/backend
+        run: mvn -B verify
+
+  frontend:
+    name: Frontend (React + Vite)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: 03_Codigo_Fuente/frontend/package.json
+      - name: Instalar dependencias y compilar
+        working-directory: 03_Codigo_Fuente/frontend
+        run: |
+          npm install
+          npm run build
