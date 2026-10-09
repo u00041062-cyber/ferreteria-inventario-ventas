@@ -37,7 +37,7 @@ Según su rol verá más o menos opciones:
 - **Categorías:** al final de la pantalla puede agregar, editar o eliminar categorías (no se elimina una que tenga productos).
 
 ## 5. Entradas y salidas de almacén (administrador)
-1. En **Almacén** elija **Entrada** (llegó mercadería) o **Salida** (ajuste, merma).
+1. En **Almacén** elija **Entrada** (llegó mercadería) o **Salida** (ajuste, merma). Las ventas registran su salida automáticamente.
 2. Seleccione el producto, la cantidad y escriba el motivo; pulse **Registrar**.
 3. El stock se actualiza y el movimiento queda en el historial. Una salida mayor al stock se rechaza.
 
@@ -45,11 +45,11 @@ Según su rol verá más o menos opciones:
 1. En **Reportes** elija **Ventas** o **Inventario**.
 2. Para ventas, indique el periodo y, si desea, producto o vendedor. Pulse **Generar**.
 3. El reporte de inventario muestra el stock, las alertas de reposición y las unidades vendidas (rotación).
-4. Pulse **Exportar PDF** o **Exportar Excel** para descargar el archivo.
+4. Con el reporte generado, pulse **Exportar PDF** o **Exportar Excel** para descargar el archivo (los botones se activan solo cuando hay resultados). El PDF de ventas muestra el total vendido al pie y el de inventario, la cantidad de productos por reponer; el Excel lista cada línea con su subtotal, sin fila de total.
 
 ## 7. Usuarios y roles (administrador)
-- **Crear:** nombre, usuario, contraseña (mínimo 6 caracteres) y rol (Administrador o Vendedor).
-- **Editar:** puede cambiar nombre, rol o dejar una nueva contraseña (si deja el campo vacío se mantiene la actual).
+- **Crear:** nombre, usuario, contraseña (entre 6 y 60 caracteres) y rol (Administrador o Vendedor).
+- **Editar:** puede cambiar nombre, usuario, rol o escribir una nueva contraseña (si deja el campo vacío se mantiene la actual).
 - **Desactivar / Activar:** un usuario desactivado no puede ingresar. No puede desactivar su propia cuenta.
 
 ## 8. Mensajes frecuentes

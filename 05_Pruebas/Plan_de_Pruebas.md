@@ -1,6 +1,6 @@
 # Plan de pruebas – Sistema de inventario y ventas (Ferretería Los Olivos)
 
-Tipos de prueba: **funcional**, **de integración** (frontend ↔ API REST ↔ base de datos) y **de rendimiento**.
+Tipos de prueba: **funcional**, **de integración** (API REST ↔ lógica de negocio ↔ base de datos; la conexión con el frontend y con SQL Server se comprueba en la prueba manual) y **de rendimiento**.
 Las pruebas automáticas están en `03_Codigo_Fuente/backend/src/test/java/com/ferreteria/` y se ejecutan con:
 
 ```bash
@@ -21,7 +21,7 @@ mvn test
 | CP07 | Inventario | Registrar una entrada de mercadería | El stock aumenta en la cantidad ingresada | Funcional | `cp07_entradaAumentaStock` | ✔ Aprobado (mvn test, 08/10/2026) |
 | CP08 | Ventas | Registrar la venta de un producto con stock | El stock se descuenta y se genera el comprobante | Integración | `cp08_ventaDescuentaStockYGeneraComprobante` | ✔ Aprobado (mvn test, 08/10/2026) |
 | CP09 | Ventas | Vender más unidades que las disponibles | Bloqueo con mensaje de stock insuficiente | Funcional | `cp09_ventaMayorAlStock` | ✔ Aprobado (mvn test, 08/10/2026) |
-| CP10 | Reportes | Generar y exportar el reporte de ventas de un periodo | Archivo PDF o Excel con totales correctos | Funcional | `cp10_reporteVentasExportable` | ✔ Aprobado (mvn test, 08/10/2026) |
+| CP10 | Reportes | Generar y exportar el reporte de ventas de un periodo | Archivo PDF o Excel generado; el PDF muestra el total vendido y el Excel el subtotal de cada línea | Funcional | `cp10_reporteVentasExportable` | ✔ Aprobado (mvn test, 08/10/2026) |
 | CP11 | Consulta de stock | Consultar el stock con un catálogo de prueba amplio (5 000 productos) | Respuesta en menos de 3 segundos | Rendimiento | `RendimientoTest.cp11_consultaStockCatalogoAmplio` | ✔ Aprobado: 415 ms (mvn test, 08/10/2026) |
 | CP12 | Flujo completo | Inicio de sesión, entrada de mercadería, venta y reporte | Datos consistentes entre todos los módulos | Integración | `cp12_flujoCompleto` | ✔ Aprobado (mvn test, 08/10/2026) |
 
@@ -44,10 +44,14 @@ Las 12 pruebas planificadas (CP01–CP12) y las 2 adicionales quedaron aprobadas
 
 El proyecto compila con Java 17 (`pom.xml`); la ejecución se hizo con JDK 21, compatible con esa versión.
 
-## Prueba manual en el navegador
+Segunda ejecución de verificación (08/10/2026, 18:53 – 18:54, hora de Lima; Windows, Java 21.0.10): 14 pruebas, 0 fallos, 0 errores, 0 omitidas; BUILD SUCCESS en 2 min 39 s (RendimientoTest 48,48 s; SistemaIntegracionTest 40,26 s). CP11: consulta sobre 5 000 productos en 525 ms. Los tiempos varían según el equipo y la corrida; el criterio de aprobación (menos de 3 000 ms) se cumple en ambas ejecuciones.
+
+Alcance de las pruebas automáticas: validan la API REST, la lógica de negocio y la persistencia sobre H2 en memoria con el esquema generado por Hibernate; no ejecutan los scripts de 04_Base_de_Datos ni usan SQL Server o el frontend. CP08 verifica el descuento de stock y el total de la venta; CP10 verifica el subtotal del reporte de ventas (JSON), que los archivos PDF y Excel se generen con el formato correcto y que el reporte de inventario sea exclusivo del administrador (el vendedor recibe acceso denegado). CP11 mide el tiempo de la búsqueda de productos en la capa de servicio (`ProductoService.buscar`, con un filtro de texto sobre 5 000 productos) y no incluye red ni frontend. La descarga y revisión visual del comprobante y de los reportes exportados (en el PDF de ventas, el total vendido; en el Excel, el subtotal de cada línea, sin fila de total), el registro en SQL Server (objetivo 5) y la medición de CP11 en los equipos del local se comprueban en la prueba manual.
+
+## Prueba manual en el navegador (evidencia para el informe)
 1. Ingresar como `admin` → ver menú completo. Ingresar como `vendedor1` → solo Stock y Ventas.
-2. Registrar un producto, una entrada de mercadería y una venta; verificar el descuento de stock en Stock.
-3. Generar el reporte de ventas del día y exportar PDF y Excel.
+2. Registrar un producto, una entrada de mercadería y una venta; descargar el comprobante PDF, verificar el descuento de stock en Stock y comprobar en SSMS que la venta y los movimientos quedaron en SQL Server.
+3. Generar el reporte de ventas del día, exportar PDF y Excel y revisar que el total vendido del PDF coincida con el TOTAL de la pantalla y que la suma de los subtotales del Excel dé el mismo monto (el Excel no incluye fila de total).
 4. Tomar capturas de pantalla de cada módulo (Captura 1 a 7 del informe).
 
 ## Medición de indicadores (objetivos específicos)

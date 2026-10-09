@@ -1,11 +1,9 @@
-# Integración continua: compila y ejecuta las pruebas en cada push o Pull Request.
+# Integración continua: compila y ejecuta las pruebas en cada push a la rama principal.
 name: CI
 
 on:
   push:
-    branches: [ principal, develop, 'feature/**' ]
-  pull_request:
-    branches: [ principal, develop ]
+    branches: [ principal ]
 
 jobs:
   backend:
