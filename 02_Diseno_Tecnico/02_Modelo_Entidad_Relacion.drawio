@@ -1,29 +1,29 @@
 <mxfile host="Electron">
   <diagram name="Modelo ER" id="d1">
-    <mxGraphModel dx="1058" dy="638" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="800" math="0" shadow="0">
+    <mxGraphModel dx="1224" dy="737" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="800" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;ROL&lt;/b&gt;&lt;hr/&gt;&lt;table cellpadding=&quot;1&quot; style=&quot;font-size:11px&quot;&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id_rol INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;UQ&lt;/td&gt;&lt;td&gt;nombre VARCHAR(30)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
-          <mxGeometry height="74" width="250" x="40" y="40" as="geometry" />
+          <mxGeometry height="74" width="250" x="744" y="573" as="geometry" />
         </mxCell>
         <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;USUARIO&lt;/b&gt;&lt;hr/&gt;&lt;table cellpadding=&quot;1&quot; style=&quot;font-size:11px&quot;&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id_usuario INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;nombre VARCHAR(100)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;UQ&lt;/td&gt;&lt;td&gt;usuario VARCHAR(30)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;contrasena VARCHAR(100) (BCrypt)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;estado BIT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;id_rol INT&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
-          <mxGeometry height="162" width="250" x="40" y="200" as="geometry" />
+          <mxGeometry height="162" width="250" x="744" y="341" as="geometry" />
         </mxCell>
         <mxCell id="4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;CATEGORIA&lt;/b&gt;&lt;hr/&gt;&lt;table cellpadding=&quot;1&quot; style=&quot;font-size:11px&quot;&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id_categoria INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;UQ&lt;/td&gt;&lt;td&gt;nombre VARCHAR(60)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;descripcion VARCHAR(200)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
-          <mxGeometry height="96" width="250" x="420" y="40" as="geometry" />
+          <mxGeometry height="96" width="250" x="62" y="520" as="geometry" />
         </mxCell>
         <mxCell id="5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;PRODUCTO&lt;/b&gt;&lt;hr/&gt;&lt;table cellpadding=&quot;1&quot; style=&quot;font-size:11px&quot;&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id_producto INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;UQ&lt;/td&gt;&lt;td&gt;codigo VARCHAR(20)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;descripcion VARCHAR(150)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;precio DECIMAL(10,2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;stock_actual INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;stock_minimo INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;ubicacion VARCHAR(50)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;activo BIT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;id_categoria INT&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
-          <mxGeometry height="228" width="250" x="420" y="200" as="geometry" />
+          <mxGeometry height="228" width="250" x="62" y="216" as="geometry" />
         </mxCell>
         <mxCell id="6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;MOVIMIENTO_INVENTARIO&lt;/b&gt;&lt;hr&gt;&lt;table cellpadding=&quot;1&quot; style=&quot;font-size:11px&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id_movimiento INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;tipo VARCHAR(7)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;cantidad INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;fecha DATETIME2(0)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;motivo VARCHAR(100)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;id_producto INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;id_usuario INT&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
-          <mxGeometry height="184" width="250" x="800" y="40" as="geometry" />
+          <mxGeometry height="184" width="250" x="744" y="67" as="geometry" />
         </mxCell>
         <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;VENTA&lt;/b&gt;&lt;hr&gt;&lt;table cellpadding=&quot;1&quot; style=&quot;font-size:11px&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id_venta INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;fecha DATETIME2(0)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;total DECIMAL(12,2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;id_usuario INT&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
-          <mxGeometry height="118" width="250" x="40" y="430" as="geometry" />
+          <mxGeometry height="118" width="250" x="420" y="477" as="geometry" />
         </mxCell>
         <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;DETALLE_VENTA&lt;/b&gt;&lt;hr&gt;&lt;table cellpadding=&quot;1&quot; style=&quot;font-size:11px&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id_detalle INT&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;id_venta INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;id_producto INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;cantidad INT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;precio_unitario DECIMAL(10,2)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;subtotal DECIMAL(12,2) (calculado)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;UQ&lt;/td&gt;&lt;td&gt;(id_venta, id_producto)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
-          <mxGeometry height="162" width="250" x="420" y="470" as="geometry" />
+          <mxGeometry height="162" width="250" x="420" y="216" as="geometry" />
         </mxCell>
         <mxCell id="9" edge="1" parent="1" source="2" style="endArrow=ERmany;startArrow=ERmandOne;html=1;endFill=0;startFill=0;" target="3" value="1 : N">
           <mxGeometry relative="1" as="geometry" />
@@ -32,7 +32,11 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="11" edge="1" parent="1" source="5" style="endArrow=ERmany;startArrow=ERmandOne;html=1;endFill=0;startFill=0;" target="6" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="0.0011" as="geometry">
+            <Array as="points">
+              <mxPoint x="439.13" y="163.24" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="12" edge="1" parent="1" source="3" style="endArrow=ERmany;startArrow=ERmandOne;html=1;endFill=0;startFill=0;" target="6" value="1 : N">
           <mxGeometry relative="1" as="geometry" />
