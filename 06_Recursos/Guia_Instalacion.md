@@ -14,7 +14,7 @@ Arquitectura: **React** (puerto 5173) → **Spring Boot** (puerto 8080) → **SQ
 
 ## 2. Obtener el código
 ```bash
-git clone https://github.com/USUARIO/ferreteria-inventario-ventas.git
+git clone https://github.com/u00041062-cyber/ferreteria-inventario-ventas.git
 cd ferreteria-inventario-ventas
 ```
 
