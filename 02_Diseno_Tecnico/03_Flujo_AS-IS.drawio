@@ -1,1 +1,99 @@
-<mxfile host="app.diagrams.net"><diagram name="Proceso actual AS-IS" id="d1"><mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="850" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" value="Cliente solicita un producto" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="190" height="60" as="geometry"/></mxCell><mxCell id="3" value="Vendedor va al almacén a verificar el stock físicamente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="40" y="150" width="190" height="60" as="geometry"/></mxCell><mxCell id="4" value="¿Hay stock?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="40" y="260" width="190" height="90" as="geometry"/></mxCell><mxCell id="5" value="Vendedor ofrece otro producto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="330" y="275" width="190" height="60" as="geometry"/></mxCell><mxCell id="6" value="Consulta el precio en lista impresa (puede estar desactualizada)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="40" y="400" width="190" height="60" as="geometry"/></mxCell><mxCell id="7" value="Anota la venta en el cuaderno" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="40" y="510" width="190" height="60" as="geometry"/></mxCell><mxCell id="8" value="Entrega producto y comprobante en papel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="40" y="620" width="190" height="60" as="geometry"/></mxCell><mxCell id="9" value="Al cierre: el dueño transcribe el cuaderno a Excel (1 h diaria)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="330" y="620" width="190" height="60" as="geometry"/></mxCell><mxCell id="10" value="Actualiza el stock manualmente (desfasado, con errores)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="330" y="510" width="190" height="60" as="geometry"/></mxCell><mxCell id="11" value="Reporte consolidado manual (40 min)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="330" y="400" width="190" height="60" as="geometry"/></mxCell><mxCell id="12" value="Fin" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="330" y="730" width="190" height="50" as="geometry"/></mxCell><mxCell id="13" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="2" target="3"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="14" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="15" value="No" style="endArrow=classic;html=1;" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="16" value="Sí" style="endArrow=classic;html=1;" edge="1" parent="1" source="4" target="6"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="17" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="6" target="7"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="18" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="7" target="8"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="19" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="8" target="9"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="20" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="9" target="10"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="21" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="10" target="11"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="22" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="11" target="12"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="23" value="¿Acepta otro producto?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="580" y="260" width="190" height="90" as="geometry"/></mxCell><mxCell id="24" value="Cliente se retira (venta perdida)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="580" y="150" width="190" height="60" as="geometry"/></mxCell><mxCell id="25" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="5" target="23"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="26" value="No" style="endArrow=classic;html=1;" edge="1" parent="1" source="23" target="24"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="27" value="Sí" style="endArrow=classic;html=1;" edge="1" parent="1" source="23" target="6"><mxGeometry relative="1" as="geometry"/></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="Electron">
+  <diagram name="Proceso actual AS-IS" id="d1">
+    <mxGraphModel dx="1224" dy="737" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Cliente solicita un producto" vertex="1">
+          <mxGeometry height="60" width="190" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Vendedor va al almacén a verificar el stock físicamente" vertex="1">
+          <mxGeometry height="60" width="190" x="40" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="¿Hay stock?" vertex="1">
+          <mxGeometry height="90" width="190" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Vendedor ofrece otro producto" vertex="1">
+          <mxGeometry height="60" width="190" x="330" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Consulta el precio en lista impresa (puede estar desactualizada)" vertex="1">
+          <mxGeometry height="60" width="190" x="40" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Anota la venta en el cuaderno" vertex="1">
+          <mxGeometry height="60" width="190" x="40" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Entrega producto y comprobante en papel" vertex="1">
+          <mxGeometry height="60" width="190" x="40" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Al cierre: el dueño transcribe el cuaderno a Excel (1 h diaria)" vertex="1">
+          <mxGeometry height="60" width="190" x="330" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Actualiza el stock manualmente (desfasado, con errores)" vertex="1">
+          <mxGeometry height="60" width="190" x="330" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Reporte consolidado manual (40 min)" vertex="1">
+          <mxGeometry height="60" width="190" x="330" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Fin" vertex="1">
+          <mxGeometry height="50" width="190" x="567" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" source="2" style="endArrow=classic;html=1;" target="3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" source="3" style="endArrow=classic;html=1;" target="4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="4" style="endArrow=classic;html=1;" target="5" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" source="4" style="endArrow=classic;html=1;" target="6" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" edge="1" parent="1" source="6" style="endArrow=classic;html=1;" target="7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" edge="1" parent="1" source="7" style="endArrow=classic;html=1;" target="8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" edge="1" parent="1" source="8" style="endArrow=classic;html=1;" target="9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" source="9" style="endArrow=classic;html=1;" target="10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" source="10" style="endArrow=classic;html=1;" target="11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" source="11" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="12" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="¿Acepta otro producto?" vertex="1">
+          <mxGeometry height="90" width="190" x="580" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Cliente se retira (venta perdida)" vertex="1">
+          <mxGeometry height="60" width="190" x="580" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" source="5" style="endArrow=classic;html=1;" target="23" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" source="23" style="endArrow=classic;html=1;" target="24" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" source="23" style="endArrow=classic;html=1;" target="6" value="Sí">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8Bxeh2Y-B77cz2f9fg3b-27" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Fin" vertex="1">
+          <mxGeometry height="50" width="190" x="580" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="8Bxeh2Y-B77cz2f9fg3b-29" edge="1" parent="1" source="24" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="8Bxeh2Y-B77cz2f9fg3b-27" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="189" y="239" as="sourcePoint" />
+            <mxPoint x="189" y="289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
