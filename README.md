@@ -16,7 +16,6 @@ Aplicación web de 3 capas: **React** (presentación) → **Spring Boot** (API R
 
 ## Flujo de ramas
 Todo el trabajo y todas las modificaciones se realizan directamente en la rama `principal` (rama por defecto del repositorio); no se usan ramas `develop` ni `feature/<historia>`.
-Al cierre de cada sprint se crea una etiqueta (`v1.0`, `v2.0`, `v3.0`) sobre `principal`.
 
 ## Integración continua
 `.github/workflows/ci.yml` compila y ejecuta las pruebas en cada push a `principal` (backend: `mvn -B verify`; frontend: `npm run build`).
